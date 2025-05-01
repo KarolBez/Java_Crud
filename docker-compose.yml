@@ -1,0 +1,60 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: unifor_postgres
+    environment:
+      POSTGRES_DB: unifor
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:24.0.1
+    container_name: unifor_keycloak
+    command: start-dev --import-realm
+    ports:
+      - "8080:8080"
+    environment:
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/unifor
+      KC_DB_USERNAME: postgres
+      KC_DB_PASSWORD: postgres
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    volumes:
+      - ./keycloak/unifor-realm.json:/opt/keycloak/data/import/unifor-realm.json
+    depends_on:
+      - postgres
+
+  backend:
+    build:
+      context: ./backend
+    container_name: unifor_backend
+    ports:
+      - "8081:8081"
+    environment:
+      QUARKUS_DATASOURCE_JDBC_URL: jdbc:postgresql://postgres:5432/unifor
+      QUARKUS_DATASOURCE_USERNAME: postgres
+      QUARKUS_DATASOURCE_PASSWORD: postgres
+      QUARKUS_HTTP_PORT: 8081
+    depends_on:
+      - postgres
+      - keycloak
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: unifor_frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+      - keycloak
+
+volumes:
+  postgres_data:

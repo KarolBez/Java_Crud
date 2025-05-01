@@ -1,0 +1,53 @@
+{
+    "realm": "unifor",
+    "enabled": true,
+    "clients": [
+      {
+        "clientId": "unifor-frontend",
+        "publicClient": true,
+        "redirectUris": ["*"],
+        "webOrigins": ["*"]
+      },
+      {
+        "clientId": "unifor-backend",
+        "secret": "backend-secret",
+        "serviceAccountsEnabled": true,
+        "standardFlowEnabled": false
+      }
+    ],
+    "users": [
+      {
+        "username": "admin",
+        "enabled": true,
+        "credentials": [{ "type": "password", "value": "admin" }],
+        "realmRoles": ["admin"]
+      },
+      {
+        "username": "coordinator",
+        "enabled": true,
+        "credentials": [{ "type": "password", "value": "coordinator" }],
+        "realmRoles": ["coordinator"]
+      },
+      {
+        "username": "professor",
+        "enabled": true,
+        "credentials": [{ "type": "password", "value": "professor" }],
+        "realmRoles": ["professor"]
+      },
+      {
+        "username": "student",
+        "enabled": true,
+        "credentials": [{ "type": "password", "value": "student" }],
+        "realmRoles": ["student"]
+      }
+    ],
+    "roles": {
+      "realm": {
+        "admin": {},
+        "coordinator": {},
+        "professor": {},
+        "student": {}
+      }
+    }
+  }
+  
