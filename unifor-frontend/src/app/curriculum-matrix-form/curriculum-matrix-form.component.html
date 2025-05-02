@@ -1,0 +1,25 @@
+<h2>{{ editingMatrix ? 'Editar' : 'Nova' }} Matriz Curricular</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label>Curso:</label>
+  <select formControlName="courseId">
+    <option value="">Selecione</option>
+    <option *ngFor="let c of courses" [value]="c.id">{{ c.name }}</option>
+  </select>
+
+  <label>Disciplina:</label>
+  <select formControlName="disciplineId">
+    <option value="">Selecione</option>
+    <option *ngFor="let d of disciplines" [value]="d.id">{{ d.name }}</option>
+  </select>
+
+  <label>Semestre:</label>
+  <select formControlName="semesterId">
+    <option value="">Selecione</option>
+    <option *ngFor="let s of semesters" [value]="s.id">
+      {{ s.period }}/{{ s.year }}
+    </option>
+  </select>
+
+  <button type="submit">{{ editingMatrix ? 'Atualizar' : 'Criar' }}</button>
+</form>

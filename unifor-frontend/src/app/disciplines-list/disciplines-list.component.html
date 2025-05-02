@@ -1,0 +1,19 @@
+<p>disciplines-list works!</p>
+<h2>Lista de Disciplinas</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Semestre</th>
+      <th>Curso</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of disciplines">
+      <td>{{ d.name }}</td>
+      <td>{{ d.semester }}</td>
+      <td>{{ d.course.name }}</td>
+    </tr>
+  </tbody>
+</table>

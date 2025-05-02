@@ -1,0 +1,21 @@
+<p>curriculum-matrix-list works!</p>
+<h2>Matriz Curricular</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Curso</th>
+      <th>Disciplina</th>
+      <th>Semestre</th>
+      <th>Ano</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of matrix">
+      <td>{{ item.course.name }}</td>
+      <td>{{ item.discipline.name }}</td>
+      <td>{{ item.semester.period }}</td>
+      <td>{{ item.semester.year }}</td>
+    </tr>
+  </tbody>
+</table>

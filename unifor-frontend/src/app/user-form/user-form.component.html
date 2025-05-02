@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <label>Nome:</label>
+    <input formControlName="name" />
+  
+    <label>Email:</label>
+    <input formControlName="email" type="email" />
+  
+    <label>Papel:</label>
+    <select formControlName="role">
+      <option value="admin">Admin</option>
+      <option value="coordinator">Coordenador</option>
+      <option value="professor">Professor</option>
+      <option value="student">Estudante</option>
+    </select>
+  
+    <button type="submit">{{ editingUser ? 'Atualizar' : 'Criar' }}</button>
+  </form>
+  

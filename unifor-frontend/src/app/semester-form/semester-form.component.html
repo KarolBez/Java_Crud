@@ -1,0 +1,11 @@
+<h2>{{ editingSemester ? 'Editar' : 'Novo' }} Semestre</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label>Ano:</label>
+  <input type="number" formControlName="year" />
+
+  <label>Período (1 ou 2):</label>
+  <input type="number" formControlName="period" />
+
+  <button type="submit">{{ editingSemester ? 'Atualizar' : 'Criar' }}</button>
+</form>

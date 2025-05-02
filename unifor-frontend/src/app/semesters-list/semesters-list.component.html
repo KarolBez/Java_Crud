@@ -1,0 +1,16 @@
+<h2>Lista de Semestres</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ano</th>
+      <th>Período</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of semesters">
+      <td>{{ s.year }}</td>
+      <td>{{ s.period }}</td>
+    </tr>
+  </tbody>
+</table>
