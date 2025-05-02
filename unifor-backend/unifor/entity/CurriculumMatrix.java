@@ -23,6 +23,7 @@ public class CurriculumMatrix {
     @JoinColumn(name = "semester_id")
     private Semester semester;
 
+    // === Getters e Setters ===
 
     public UUID getId() {
         return id;

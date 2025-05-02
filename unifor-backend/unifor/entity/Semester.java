@@ -15,7 +15,6 @@ public class Semester {
 
     private int period; 
 
-    
     public UUID getId() {
         return id;
     }

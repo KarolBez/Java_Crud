@@ -55,3 +55,4 @@ public class UserResource {
         return deleted ? Response.noContent().build() : Response.status(Response.Status.NOT_FOUND).build();
     }
 }
+

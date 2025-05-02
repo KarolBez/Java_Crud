@@ -133,5 +133,6 @@ Cumpre todos os requisitos funcionais e técnicos exigidos.
 Está preparado para ambientes de desenvolvimento e testes.
 
 ✨ Autor
-Desenvolvido por [Karoline Bezerra ].
-
+Desenvolvido por [Seu Nome].
+Contato: [seu@email.com]
+LinkedIn: [linkedin.com/in/seu-perfil]

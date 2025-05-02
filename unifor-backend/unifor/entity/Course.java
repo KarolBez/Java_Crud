@@ -2,7 +2,6 @@ package com.unifor.entity;
 
 import jakarta.persistence.*;
 import java.util.UUID;
-import java.util.List;
 
 @Entity
 @Table(name = "courses")
@@ -14,6 +13,7 @@ public class Course {
 
     private String name;
 
+    // Getters e setters
     public UUID getId() {
         return id;
     }

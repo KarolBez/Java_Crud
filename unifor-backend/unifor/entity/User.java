@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "disciplines")
-public class Discipline {
+@Table(name = "users")
+public class User {
 
     @Id
     @GeneratedValue
@@ -13,11 +13,12 @@ public class Discipline {
 
     private String name;
 
-    private int semester; 
+    @Column(unique = true)
+    private String email;
 
-    @ManyToOne
-    @JoinColumn(name = "course_id")
-    private Course course;
+    private String role; // admin, coordinator, professor, student
+
+    // === Getters and Setters ===
 
     public UUID getId() {
         return id;
@@ -35,19 +36,19 @@ public class Discipline {
         this.name = name;
     }
 
-    public int getSemester() {
-        return semester;
+    public String getEmail() {
+        return email;
     }
 
-    public void setSemester(int semester) {
-        this.semester = semester;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public Course getCourse() {
-        return course;
+    public String getRole() {
+        return role;
     }
 
-    public void setCourse(Course course) {
-        this.course = course;
+    public void setRole(String role) {
+        this.role = role;
     }
 }

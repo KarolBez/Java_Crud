@@ -1,5 +1,4 @@
 package com.unifor.service;
-import io.quarkus.hibernate.orm.panache.PanacheRepositoryBase;
 
 import com.unifor.entity.Discipline;
 import com.unifor.repository.DisciplineRepository;
