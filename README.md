@@ -32,24 +32,18 @@ Node.js 18+ e Angular CLI (se for rodar o frontend localmente)
 🚀 Passo a passo com Docker
 Clone o repositório:
 
-bash
-Copiar
-Editar
+
 git clone https://github.com/seu-usuario/unifor-app.git
 cd unifor-app
 Compile o backend:
 
-bash
-Copiar
-Editar
+
 cd backend
 ./mvnw clean package -Dquarkus.package.type=uber-jar
 cd ..
 Suba os containers:
 
-bash
-Copiar
-Editar
+
 docker compose up --build
 Acesse:
 
@@ -121,9 +115,7 @@ PostgreSQL	5432
 📄 Importação do Realm no Keycloak
 O arquivo keycloak/unifor-realm.json é importado automaticamente ao subir o container Keycloak via:
 
-yaml
-Copiar
-Editar
+
 command: start-dev --import-realm
 📌 Observações Finais
 Este projeto foi desenvolvido como parte de um desafio técnico da UNIFOR.
